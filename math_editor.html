@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="./css/math_editor.css">
+<link rel="stylesheet" href="./css/math_tran_tool.css"> 
+<link rel="dns-prefetch" href="http://cdn.bootcss.com" />
+<link rel="dns-prefetch" href="http://cdn.mathjax.org" /> 
+<link rel="stylesheet" href="./thirdParty/umeditor/themes/default/css/umeditor.css"> 
+<title>数学公式编辑插件</title>
+</head>
+
+<body>  
+    <div class="math-editor"> 
+        <span class="title">输入框获取焦点显示公式编辑器</span> 
+    </div>
+    <!-- 编辑器1 -->
+    <div id="umeditor"></div> 
+    <!-- 编辑器2 -->
+    <p style="margin-top: 50px;"><div id="umeditor2"></div></p>
+    
+</body>
+</html>
+<script type="text/javascript" src="./js/jquery.min.js"></script>  
+
+<!-- 引入umeditor及添加的公式编辑 -->
+<script charset="utf-8" src="./thirdParty/umeditor/umeditor.config.js"></script>
+<script charset="utf-8" src="./thirdParty/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="./thirdParty/umeditor/myformula.js"></script> 
+<script type="text/javascript" src="./thirdParty/umeditor/lang/zh-cn/zh-cn.js"></script>
+
+<!-- 引入 mathjax工具处理公式 -->
+<script src="http://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=default"></script>
+<!-- 显式配置mathjax -->
+<script type="text/x-mathjax-config">
+  if(MathJax){
+    MathJax.Hub.Config({
+     showProcessingMessages: false, //关闭js加载过程信息
+     messageStyle: "none", //不显示信息
+     jax: ["input/TeX", "output/HTML-CSS"],
+     tex2jax: {
+      inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+      displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+      skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+    },
+    "HTML-CSS": {
+      availableFonts: ["STIX", "TeX"], //可选字体
+      showMathMenu: false //关闭右击菜单显示
+    }
+   });
+}
+</script> 
+
+<script>
+    // 初始化绑定页面编辑器
+    var um1 = umInit('umeditor');   //编辑器1 （按默认配置显示）
+
+    var um2 = umInit('umeditor2',{  //编辑器2 （自定义配置显示）
+        toolbar: ['bold italic underline strikethrough | superscript subscript |',
+            'image', 'myformula','| justifyleft justifycenter justifyright justifyjustify',],
+        initialFrameWidth: 600,
+        initialFrameHeight:40
+    });  
+    
+</script>  
+

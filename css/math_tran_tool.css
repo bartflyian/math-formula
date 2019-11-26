@@ -1,0 +1,23 @@
+.math-tool{
+    
+}
+.math-tool-select-box{
+    
+
+} 
+.toolbar{
+    position: relative; 
+    margin: 10px 5%;
+    
+}
+.panel{
+    display: inline-block;
+    padding: 0px 3px; 
+    vertical-align: top;
+    overflow: hidden;
+    
+}
+.panel.show-panel{
+    overflow: visible;
+    z-index: 1000;
+}

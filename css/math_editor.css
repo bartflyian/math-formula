@@ -1,0 +1,99 @@
+body{ 
+  width: 100%;
+  height: 100%;
+}
+.math-editor{ 
+  margin-top: 50px;
+}
+.math-editor .title{
+  margin-bottom: 70px;
+}
+.math-editor-box { 
+    position: relative;
+    top: 0;
+    left: 0; 
+    display: none; 
+}
+.index-textarea{
+  margin-top: 20px;
+}
+.math-editor span.title{
+  display: inline-block; 
+}
+.math-img{
+  display: block; 
+  margin: 0 0 10px 200px; 
+  height: 20px;
+  width: 20px;
+  background:  url("../imgs/add_math.png") no-repeat;  
+  background-position: 1px 2px;
+  background-size: 16px 16px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.math-editor-box .math-editor-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.5);
+    z-index: 101;
+  }
+  .math-editor-box .math-editor{
+    min-width: 600px;
+    min-height: 450px;
+    background: #fff;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-300px, -225px);
+    z-index: 102;
+    overflow: auto; 
+  } 
+
+  .math-editor textarea{
+    width: 88%;
+    margin: 10px 5% 10px 5%; 
+  }
+  .math-editor textarea img{
+    max-width: 100%;
+  }
+  .math-editor .math-view{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .math-editor .loader{
+    display: none;
+    margin: 0 auto;
+    height: 20px;
+    width: 20px;
+    background: url(../imgs/loader.gif) no-repeat;
+    background-size: 20px 20px;
+  }
+  .math-editor .confirm-btn{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; 
+  }
+  .math-editor .confirm-btn span{
+    width: 80px;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #2d8cf0;
+    border-color: #2d8cf0;
+    margin: 20px auto;
+    cursor: pointer;
+}
+.math-choose{
+  /* height: 100px; */
+}
+
+#umeditor{
+  width: 60%;
+  position: relative;
+  z-index: 100;  
+}
