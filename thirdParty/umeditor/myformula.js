@@ -14,12 +14,9 @@ function umInit(editorName,option){ //初始化一个编辑器实例
     };
     if(!option){
         option = defaultOption;
-    }else{
-        Object.keys(defaultOption).forEach((name) => {      //替换用户自定义初始化参数
-            if(!option[name]){
-                option[name] = defaultOption[name];
-            }
-        }); 
+    }else{ 
+        Object.assign(defaultOption,option); //替换用户自定义初始化参数 
+        option = defaultOption;
     } 
     umObj = UM.getEditor(editorName,option);
     umObj.setContent('');  
